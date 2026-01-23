@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Categories {
+  id               Int                   @id @default(autoincrement())
+  created_at       DateTime              @default(now())
+  name             String
+  font_color       String?
+  background_color String?
+  projects         Projects_Categories[]
+}
+
+model Skills {
+  id       Int               @id @default(autoincrement())
+  created_at DateTime @default(now())
+  name     String
+  projects Projects_Skills[]
+}
+
+model Files {
+  id       Int              @id @default(autoincrement())
+  created_at DateTime @default(now())
+  name     String
+  path     String
+  type     String
+  size     Int
+  projects Projects_Files[]
+}
+
+model Data {
+  id          Int     @id @default(autoincrement())
+  created_at DateTime @default(now())
+  name        String
+  role        String?
+  phone       String?
+  email       String?
+  description String? @db.VarChar(500)
+  linkedin    String?
+  github      String?
+  behance     String?
+}
+
+model CV {
+  id           Int     @id @default(autoincrement())
+  created_at DateTime @default(now())
+  role         String?
+  timeline     String?
+  description  String? @db.VarChar(500)
+  company      String?
+  location     String?
+  professional Boolean
+  academic     Boolean
+}
+
+model Projects {
+  id          Int                   @id @default(autoincrement())
+  created_at DateTime @default(now())
+  name        String?
+  year        Int?
+  description String?               @db.VarChar(500)
+  link        String?
+  repository  String?
+  files       Projects_Files[]
+  skills      Projects_Skills[]
+  categories  Projects_Categories[]
+}
+
+model Projects_Files {
+  created_at DateTime @default(now())
+  project_id Int
+  project    Projects @relation(fields: [project_id], references: [id])
+  file_id    Int
+  file       Files    @relation(fields: [file_id], references: [id])
+
+  @@id([project_id, file_id])
+}
+
+model Projects_Skills {
+  created_at DateTime @default(now())
+  project_id Int
+  project    Projects @relation(fields: [project_id], references: [id])
+  skill_id   Int
+  skill      Skills   @relation(fields: [skill_id], references: [id])
+
+  @@id([project_id, skill_id])
+}
+
+model Projects_Categories {
+  created_at DateTime @default(now())
+  project_id  Int
+  project     Projects   @relation(fields: [project_id], references: [id])
+  category_id Int
+  categories  Categories @relation(fields: [category_id], references: [id])
+
+  @@id([project_id, category_id])
+}
