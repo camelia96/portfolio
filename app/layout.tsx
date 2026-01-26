@@ -3,6 +3,7 @@ import { Azeret_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from "@vercel/analytics/next"
+import Clarity from '@microsoft/clarity';
 
 const azeretMono = Azeret_Mono({
   variable: "--font-azeret-mono",
@@ -24,6 +25,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  Clarity.init(process.env.CLARITY_ID!);
+
   return (
     <html lang="en">
       <body
