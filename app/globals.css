@@ -108,7 +108,7 @@
   }
 
   h1 {
-    @apply text-[9.4vw] md:text-[9.4vw] lg:text-[9.2vw] xl:text-[9.1vw] 2xl:text-[9vw] tracking-[-3] md:tracking-[-5] font-semibold  font-mono whitespace-nowrap;
+    @apply text-[9.5vw] tracking-[-0.65vw] font-semibold  font-mono whitespace-nowrap;
   }
   h2 {
     @apply text-5xl tracking-xl font-semibold;
