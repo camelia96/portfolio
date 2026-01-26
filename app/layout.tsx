@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Azeret_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const azeretMono = Azeret_Mono({
   variable: "--font-azeret-mono",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${azeretMono.variable} ${interTight.variable} antialiased`}
       >
+        <Analytics />
         <Toaster />
         {children}
       </body>
