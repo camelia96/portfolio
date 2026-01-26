@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  Clarity.init(process.env.CLARITY_ID!);
+  Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID!);
 
   return (
     <html lang="en">
