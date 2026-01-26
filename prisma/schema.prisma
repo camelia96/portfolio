@@ -17,41 +17,43 @@ model Categories {
 }
 
 model Skills {
-  id       Int               @id @default(autoincrement())
-  created_at DateTime @default(now())
-  name     String
-  projects Projects_Skills[]
+  id         Int               @id @default(autoincrement())
+  created_at DateTime          @default(now())
+  name       String
+  icon_link  String?
+  projects   Projects_Skills[]
 }
 
 model Files {
-  id       Int              @id @default(autoincrement())
-  created_at DateTime @default(now())
-  name     String
-  path     String
-  type     String
-  size     Int
-  projects Projects_Files[]
+  id         Int              @id @default(autoincrement())
+  created_at DateTime         @default(now())
+  name       String
+  path       String
+  type       String
+  size       Int
+  projects   Projects_Files[]
 }
 
 model Data {
-  id          Int     @id @default(autoincrement())
-  created_at DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  created_at  DateTime @default(now())
   name        String
   role        String?
   phone       String?
   email       String?
-  description String? @db.VarChar(500)
+  description String?  @db.VarChar(500)
   linkedin    String?
   github      String?
   behance     String?
+  cv          String?
 }
 
 model CV {
-  id           Int     @id @default(autoincrement())
-  created_at DateTime @default(now())
+  id           Int      @id @default(autoincrement())
+  created_at   DateTime @default(now())
   role         String?
   timeline     String?
-  description  String? @db.VarChar(500)
+  description  String?  @db.VarChar(500)
   company      String?
   location     String?
   professional Boolean
@@ -60,7 +62,7 @@ model CV {
 
 model Projects {
   id          Int                   @id @default(autoincrement())
-  created_at DateTime @default(now())
+  created_at  DateTime              @default(now())
   name        String?
   year        Int?
   description String?               @db.VarChar(500)
@@ -92,11 +94,11 @@ model Projects_Skills {
 }
 
 model Projects_Categories {
-  created_at DateTime @default(now())
+  created_at  DateTime   @default(now())
   project_id  Int
   project     Projects   @relation(fields: [project_id], references: [id])
   category_id Int
-  categories  Categories @relation(fields: [category_id], references: [id])
+  category    Categories @relation(fields: [category_id], references: [id])
 
   @@id([project_id, category_id])
 }
