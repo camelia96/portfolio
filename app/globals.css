@@ -108,7 +108,7 @@
   }
 
   h1 {
-    @apply text-[9.5vw] tracking-[-0.65vw] font-semibold  font-mono whitespace-nowrap;
+    @apply text-[9.5vw] tracking-[-0.75vw] font-semibold  font-mono whitespace-nowrap;
   }
   h2 {
     @apply text-5xl tracking-xl font-semibold;
