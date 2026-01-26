@@ -3,7 +3,7 @@ import { Azeret_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from "@vercel/analytics/next"
-import Clarity from '@microsoft/clarity';
+import ClarityProvider from "./ui/clarity-provider";
 
 const azeretMono = Azeret_Mono({
   variable: "--font-azeret-mono",
@@ -20,19 +20,20 @@ export const metadata: Metadata = {
   description: "Online portfolio & curriculum, by Camelia Strango",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID!);
 
   return (
     <html lang="en">
       <body
         className={`${azeretMono.variable} ${interTight.variable} antialiased`}
       >
+        <ClarityProvider />
         <Analytics />
         <Toaster />
         {children}
