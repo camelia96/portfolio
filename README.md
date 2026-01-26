@@ -2,7 +2,7 @@
 
 My personal portfolio website showcasing my projects, skills, and experience as a full-stack developer.
 
-**🔗 Live Site**: [Portfolio]()
+**🔗 Live Site**: [Portfolio & CV](https://portfolio-eight-lac-47.vercel.app/)
 
 ---
 
@@ -51,7 +51,7 @@ The entire interface was designed in Figma with a focus on creating a clean, mod
 Interested in working together or have questions?
 
 - **Email**: camelia.96str@gmail.com
-- **LinkedIn**: [Camelia Strangop](https://linkedin.com/in/camelia-str)
+- **LinkedIn**: [Camelia Strango](https://linkedin.com/in/camelia-str)
 - **GitHub**: [@camelia96](https://github.com/camelia96)
 
 ---
