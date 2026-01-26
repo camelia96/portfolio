@@ -41,7 +41,7 @@
 
 @theme inline {
   /* Letter Spacing*/
-  --tracking-xs: -0.4;
+  --tracking-xs: -0.2;
   --tracking-sm: -0.6;
   --tracking-md: -0.8;
   --tracking-lg: -1;
@@ -97,27 +97,36 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply bg-cream text-foreground;
   }
   a {
-    @apply text-[25px] tracking-sm;
+    @apply text-2xl tracking-md;
   }
 
   h1 {
-    @apply text-[9vw] font-semibold tracking-[-5] leading-40 font-mono whitespace-nowrap;
+    @apply text-[9.4vw] md:text-[9.4vw] lg:text-[9.2vw] xl:text-[9.1vw] 2xl:text-[9vw] tracking-[-3] md:tracking-[-5] font-semibold  font-mono whitespace-nowrap;
   }
   h2 {
-    @apply text-[75px] tracking-md font-medium;
+    @apply text-5xl tracking-xl font-semibold;
   }
   h3 {
-    @apply text-[30px] font-semibold font-mono text-gray uppercase tracking-xl;
+    @apply text-2xl font-semibold font-mono text-gray uppercase tracking-xl;
   }
   h4 {
-    @apply text-[20px] tracking-md font-medium font-mono;
-  }
-  p {
-    @apply text-lg tracking-sm font-normal leading-snug;
+    @apply text-xl tracking-md font-medium;
   }
 
+  h5 {
+    @apply text-xl tracking-md font-semibold font-mono;
+  }
+  h6 {
+    @apply text-lg tracking-sm font-semibold font-mono;
+  }
+  p {
+    @apply text-base tracking-xs font-normal;
+  }
 }
