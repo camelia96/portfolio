@@ -55,9 +55,11 @@ model CV {
   timeline     String?
   description  String?  @db.VarChar(500)
   company      String?
+  icon_company String?
   location     String?
   professional Boolean
   academic     Boolean
+  sort         Int
 }
 
 model Projects {
