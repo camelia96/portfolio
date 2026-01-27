@@ -22,7 +22,7 @@ export function CvRecord({ record }: CvProps) {
                 <p className="text-gray">{record.location}</p>
             </div>
 
-            {bulletDescription ? (<ul className="list-disc">{bulletDescription.map((d, i) => (<li key={i}>{d}</li>))}</ul>) : ""}
+            {bulletDescription ? (<ul className="list-disc list-inside">{bulletDescription.map((d, i) => (<li key={i}>{d}</li>))}</ul>) : ""}
 
 
         </div>
