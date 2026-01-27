@@ -13,10 +13,13 @@ export function CvRecord({ record }: CvProps) {
                 <p className="text-gray font-medium">{record.timeline}</p>
             </div>
 
-            {bulletDescription ? (<ul className="list-disc">{bulletDescription.map((d, i) => (<li  key={i}>{d}</li>))}</ul>) : ""}
+            {bulletDescription ? (<ul className="list-disc">{bulletDescription.map((d, i) => (<li key={i}>{d}</li>))}</ul>) : ""}
 
             <div>
-                <p className="">{record.company}</p>
+                <div>
+                    {record.icon_company && (<img src={record.icon_company} className="p-0.5 " width={100} height={100} alt="Logo" />)}
+                    <p className="">{record.company}</p>
+                </div>
                 <p className="text-gray">{record.location}</p>
             </div>
         </div>

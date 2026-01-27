@@ -103,7 +103,7 @@ export default async function Home() {
               <div>
                 <h3 className="mb-2">Professional Experience</h3>
                 <div className="flex flex-wrap flex-col items-start gap-6">
-                  {professional.map((p) => (<CvRecord key={p.id} record={p} />))}
+                  {professional.sort((a, b) => b.sort - a.sort).map((p) => (<CvRecord key={p.id} record={p} />))}
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export default async function Home() {
               <div>
                 <h3 className="mb-2">Academic experience</h3>
                 <div className="flex flex-col items-start gap-6">
-                  {academic.map((a) => (<CvRecord key={a.id} record={a} />))}
+                  {academic.sort((a, b) => b.sort - a.sort).map((a) => (<CvRecord key={a.id} record={a} />))}
                 </div>
               </div>
             </div>
