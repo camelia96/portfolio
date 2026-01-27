@@ -117,7 +117,7 @@
     @apply text-2xl font-semibold font-mono text-gray uppercase tracking-xl;
   }
   h4 {
-    @apply text-xl tracking-md font-medium;
+    @apply text-xl tracking-sm font-semibold;
   }
 
   h5 {
