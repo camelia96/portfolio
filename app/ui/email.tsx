@@ -12,6 +12,6 @@ export function Email({ email }: { email: string }) {
     }
     return (
         <>
-            <p className="font-mono tracking-sm flex gap-2 items-center">{email}<Copy className="hover:text-[#BE4BC4] hover:cursor-pointer transition duration-200 " size={24} onClick={handleCopyClipboard} /></p>
+            <p className="font-mono tracking-sm flex gap-2 items-center">{email}<Copy className="hover:text-accent-theme hover:cursor-pointer transition duration-200 " size={24} onClick={handleCopyClipboard} /></p>
         </>)
 }

@@ -66,7 +66,7 @@ export default async function ProjectCard({ project, imgURL }: ProjectCardProps)
             <div className="flex gap-2">
 
                 {/** Project Site */}
-                <Link className="text-sm  font-medium font-mono uppercase border-b border-black hover:text-gray hover:border-none transition duration-200" target="_blank" href={project.link ? project.link : "#"}>project</Link>
+                <Link className="text-sm  font-medium font-mono uppercase border-b border-black hover:text-accent-theme hover:border-none transition duration-200" target="_blank" href={project.link ? project.link : "#"}>project</Link>
 
                 {/** Project Repo */}
                 {project.repository && <Link className="text-sm font-medium font-mono uppercase text-fallback-dark border-b border-transparent hover:border-current transition-colors duration-200 " target="_blank" href={project.repository}>repository</Link>}

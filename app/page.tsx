@@ -38,12 +38,14 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center overflow-x-hidden">
       <div className="flex flex-col max-w-10/12 m-10 font-sans text-black gap-20 lg:gap-26">
-        <div id="home" className="w-full flex flex-col justify-start gap-20">
+        <div id="home" className="w-full  flex flex-col justify-start gap-20">
           <Nav />
 
-          {/** NAME */}
-          <h1 className="text-center md:text-start uppercase hidden">{name}</h1>
-          <img src="https://gdjbqfvypxklniobbydw.supabase.co/storage/v1/object/public/Files/name.svg" className="w-full" alt="Name" />
+          <div>
+            {/** NAME */}
+            <h1 className="text-center md:text-start uppercase hidden">{name}</h1>
+            <img src="https://gdjbqfvypxklniobbydw.supabase.co/storage/v1/object/public/Files/name.svg" className="w-full" alt="Name" />
+          </div>
 
           {/** ABOUT */}
           <AboutData about={{ role, description }} contact={{ email, social }} />
@@ -76,7 +78,7 @@ export default async function Home() {
             <div className="flex flex-col mb-12 ">
               <h2>curriculum.</h2>
               {/** DOWNLOAD CV */}
-              <Link href={cv} target="_blank" className="w-fit border-b border-black hover:text-gray hover:border-none transition duration-200">download <span className="font-bold">cv</span></Link>
+              <Link href={cv} target="_blank" className="w-fit border-b border-black hover:text-accent-theme hover:border-none transition duration-200">download <span className="font-bold">cv</span></Link>
             </div>
 
             <div className="flex flex-col gap-18">
