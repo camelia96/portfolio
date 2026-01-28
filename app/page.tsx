@@ -43,7 +43,7 @@ export default async function Home() {
 
           {/** NAME */}
           <h1 className="text-center md:text-start uppercase hidden">{name}</h1>
-          <img src="https://gdjbqfvypxklniobbydw.supabase.co/storage/v1/object/public/Files/name.svg" className="w-fit" alt="" />
+          <img src="https://gdjbqfvypxklniobbydw.supabase.co/storage/v1/object/public/Files/name.svg" className="w-full" alt="Name" />
 
           {/** ABOUT */}
           <AboutData about={{ role, description }} contact={{ email, social }} />

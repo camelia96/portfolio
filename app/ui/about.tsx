@@ -15,8 +15,8 @@ export function AboutData({ about, contact }: AboutProps) {
     return (
         <div className="flex flex-col justify-between w-full gap-8" >
             {/** ROLE */}
-            <div className="w-fit bg-[#FADFFF] px-6 py-3 rounded-4xl">
-                <p className="w-fit text-sm md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl text-center md:text-start font-sans tracking-md font-semibold text-[#BE4BC4]">{role}</p>
+            <div className="w-fit bg-[#fcede5] px-6 py-3 rounded-4xl">
+                <p className="w-fit text-sm md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl text-center md:text-start font-sans tracking-md font-semibold text-[#ee4e06]">{role}</p>
             </div>
 
             {/** DESCRIPTION */}
