@@ -11,6 +11,7 @@ import Nav from "./ui/layout/nav";
 import { Footer } from "./ui/layout/footer";
 import { supabase } from "@/lib/supabase";
 import { Separator } from "@/components/ui/separator";
+import { M_PLUS_1 } from "next/font/google";
 
 export default async function Home() {
   // Projects
@@ -37,11 +38,12 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center overflow-x-hidden">
       <div className="flex flex-col max-w-10/12 m-10 font-sans text-black gap-20 lg:gap-26">
-        <div id="home" className="w-full flex flex-col justify-start gap-12">
+        <div id="home" className="w-full flex flex-col justify-start gap-20">
           <Nav />
 
           {/** NAME */}
-          <h1 className="text-center md:text-start uppercase">{name}</h1>
+          <h1 className="text-center md:text-start uppercase hidden">{name}</h1>
+          <img src="https://gdjbqfvypxklniobbydw.supabase.co/storage/v1/object/public/Files/name.svg" className="w-fit" alt="" />
 
           {/** ABOUT */}
           <AboutData about={{ role, description }} contact={{ email, social }} />
@@ -53,7 +55,7 @@ export default async function Home() {
           {/** PROJECTS */}
           <div id="projects">
             <h2 className="leading-normal mb-6">projects.</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {projects &&
                 (<>
                   {projects.map((p) => {
@@ -72,14 +74,14 @@ export default async function Home() {
           {/** CV */}
           <div id="cv">
             <div className="flex flex-col mb-12 ">
-              <h2>cv.</h2>
+              <h2>curriculum.</h2>
               {/** DOWNLOAD CV */}
               <Link href={cv} target="_blank" className="w-fit border-b border-black hover:text-gray hover:border-none transition duration-200">download <span className="font-bold">cv</span></Link>
             </div>
 
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-18">
 
-              {/** Tech stack */}
+              {/** Skills */}
               {skills &&
                 (<div>
                   <h3 className="mb-2">Skills</h3>
@@ -89,7 +91,7 @@ export default async function Home() {
                 </div>
                 )
               }
-              {/** TECH STACK */}
+              {/** Competencies */}
               {categories && (
                 <div>
                   <h3 className="mb-2">Competencies</h3>
@@ -103,7 +105,7 @@ export default async function Home() {
               <div>
                 <h3 className="mb-2">Professional Experience</h3>
                 <div className="flex flex-wrap flex-col items-start gap-6">
-                  {professional.sort((a, b) => b.sort - a.sort).map((p) => (<CvRecord key={p.id} record={p} />))}
+                  {professional.sort((a, b) => b.sort - a.sort).map((p) => { if (p.show) return (<CvRecord key={p.id} record={p} />) })}
                 </div>
               </div>
 

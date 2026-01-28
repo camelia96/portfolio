@@ -19,13 +19,13 @@ export default async function ProjectCard({ project, imgURL }: ProjectCardProps)
 
 
     return (
-        <Card className=" flex flex-col gap-4">
+        <Card className=" flex flex-col">
 
             {/** IMAGE */}
-            <div className="w-full min-h-70 h-100 border lg:h-70 bg-no-repeat bg-cover bg-center " style={{ backgroundImage: `url(${imgURL})` }}></div>
+            <div className="w-full min-h-100 h-100 border lg:h-70 bg-no-repeat bg-cover bg-center " style={{ backgroundImage: `url(${imgURL})` }}></div>
 
             {/** Categories Badges */}
-            <div className="flex flex-wrap items-center gap-1">
+            <div className="flex flex-wrap items-center gap-2 my-2">
                 {project.categories && (
                     <>
                         {project.categories.map((c) => (<CategoryBadge key={c.category_id} category={c.category} />))}
@@ -37,10 +37,10 @@ export default async function ProjectCard({ project, imgURL }: ProjectCardProps)
 
             {/** Skills Badges - COLLAPSIBLE */}
             <Collapsible>
-                <CollapsibleTrigger className="font-medium text-base rounded-xl px-2 py-1  w-fit border border-gray-300 mb-2">
+                <CollapsibleTrigger className="font-medium text-base rounded-xl px-3 py-1  w-fit border border-gray-300 mb-3">
                     <span className="font-bold ">click </span><span className="hover:text-gray  font-normal transition duration-200 ease-in-out">to see tech stack.</span>
                 </CollapsibleTrigger>
-                <CollapsibleContent className="flex flex-wrap items-center gap-2 " >
+                <CollapsibleContent className="flex flex-wrap items-center pb-1 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down gap-2 overflow-hidden transition-all duration-300" >
                     {project.skills && (
                         <>
                             {project.skills.map((s) => (<SkillBadge key={s.skill_id} skill={s.skill} />))}
@@ -53,7 +53,7 @@ export default async function ProjectCard({ project, imgURL }: ProjectCardProps)
             {/** Project DATA */}
             <div className="flex flex-col items-start gap-2">
                 {/** Project Name */}
-                <h3 className="capitalize text-black font-medium ">{project.name}</h3>
+                <h3 className="capitalize text-black leading-tight ">{project.name}</h3>
                 {/** Project description */}
                 <p>{project.description}</p>
 
