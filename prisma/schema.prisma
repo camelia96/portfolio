@@ -60,6 +60,7 @@ model CV {
   professional Boolean
   academic     Boolean
   sort         Int
+  show         Boolean  @default(true)
 }
 
 model Projects {
